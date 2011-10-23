@@ -1,0 +1,11 @@
+name: httpry
+summary: "TODO: Summary"
+description: "TODO: Description"
+license: MIT
+authors: mephux
+homepage: http://rubygems.org/gems/httpry
+
+development_dependencies:
+  ore-tasks: ~> 0.4
+  rspec: ~> 2.4
+  yard: ~> 0.7
