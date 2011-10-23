@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <title>rhttpry</title>
+  <link media="all" rel="stylesheet" href="stylesheets/rhttpry.css" type="text/css" />
+</head>
+<body>
+
+  <script src="javascripts/jquery.js" type="text/javascript"></script>
+
+  <script type="text/javascript" charset="utf-8">
+    ws = new WebSocket("ws://localhost:8080/");
+
+    ws.onmessage = function(evt) {       
+      var data = JSON.parse(evt.data);
+      console.log(data)
+    };
+
+    ws.onclose = function() { console.log("socket closed"); };
+  </script>
+
+  <script src="javascripts/rhttpry.js" type="text/javascript"></script>
+
+</body>
+</html>
+

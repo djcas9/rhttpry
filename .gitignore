@@ -1,2 +1,6 @@
 doc/
 pkg/
+*.swp
+*.swo
+tmp.log
+index.html
