@@ -27,8 +27,18 @@ module Httpry
       end
       
       def message_received(obj)
-        puts obj.to_json
-        Collect.channel.push obj.to_json
+        event = obj
+
+        EM.next_tick do
+          
+          Collect.channel.push({
+            :type => :event,
+            :data => event
+          }.to_json)
+
+          Collect.events.insert(event)
+
+        end
       end
 
       def unbind
